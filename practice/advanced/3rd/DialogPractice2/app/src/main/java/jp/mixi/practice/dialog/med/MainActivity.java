@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class MainActivity extends FragmentActivity {
+    public int po = 0;
     private ListView listView = null;
     private ListItemSelectionDialogFragment listItemSelectionDialogFragment = null;
 
@@ -50,7 +51,8 @@ public class MainActivity extends FragmentActivity {
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
-
+         AdapterView.AdapterContextMenuInfo adapter = (AdapterView.AdapterContextMenuInfo)menuInfo;
+        po = adapter.position;
         // TODO: 長押しメニューに、削除・キャンセル、の 2 つの項目を表示する
         getMenuInflater().inflate(R.menu.main, menu);
 
@@ -60,12 +62,20 @@ public class MainActivity extends FragmentActivity {
     public boolean onContextItemSelected(MenuItem item) {
         // TODO: 長押しメニューの、削除、の項目の選択をハンドリングして、確認のためのダイアログを
 
- // test 1
-                        DialogFragment lsdf = new ListItemSelectionDialogFragment();
-                        lsdf.show(getSupportFragmentManager(), "my_dialog_fragment");
+        String title = (String) item.getTitle();
+        switch (title) {
+            case "CANCEL":
+                DialogFragment lsdf = new ListItemSelectionDialogFragment();
+                lsdf.show(getSupportFragmentManager(), "my_dialog_fragment");
+            break;
+            case "OK":
+                break;
+            default:
+                break;
+        }
 
-                        return super.onContextItemSelected(item);
-
-
+        return super.onContextItemSelected(item);
     }
+
+
 }

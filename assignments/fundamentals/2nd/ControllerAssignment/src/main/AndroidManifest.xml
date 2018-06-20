@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="jp.mixi.assignment.controller">
 
@@ -12,6 +13,7 @@
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -27,5 +29,10 @@
         <activity
             android:name=".Controller4Activity"
             android:label="@string/controller4_name" />
+        <activity android:name=".Title_Activity" />
+        <activity android:name=".BodyActivity" />
+        <activity android:name=".ButtonActivity" />
+        <activity android:name=".Main2Activity"></activity>
     </application>
+
 </manifest>
