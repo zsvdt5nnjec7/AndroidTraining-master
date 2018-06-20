@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="jp.mixi.practice.messagingandnotification">
+
+    <uses-permission android:name="android.permission.VIBRATE">
+
+    </uses-permission>
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".IntentActivity1"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".IntentActivity2"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".NotificationActivity"
+            android:label="@string/app_name" />
+        <activity android:name=".NewActivity1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".NewActivity2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".NewActivity3">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver android:name="jp.mixi.practice.messagingandnotification.MyBroadcastReceiver">
+            <intent-filter ><action android:name="android.intent.action.BATTERY_LOW"/></intent-filter>
+        </receiver>
+
+
+    </application>
+
+</manifest>

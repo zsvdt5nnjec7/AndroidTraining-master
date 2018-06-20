@@ -1,0 +1,82 @@
+// fundamentals 1st
+include ':1-1-LayoutPractice'
+project(':1-1-LayoutPractice').projectDir = new File('practice/fundamentals/1st/LayoutPractice')
+include ':1-1-LayoutAssignment'
+project(':1-1-LayoutAssignment').projectDir = new File('assignments/fundamentals/1st/LayoutAssignment')
+
+// fundamentals 2nd
+include ':1-2-ControllerPractice'
+project(':1-2-ControllerPractice').projectDir = new File('practice/fundamentals/2nd/ControllerPractice')
+include ':1-2-ControllerAssignment'
+project(':1-2-ControllerAssignment').projectDir = new File('assignments/fundamentals/2nd/ControllerAssignment')
+
+// fundamentals 3rd
+include ':1-3-ResourceManagement'
+project(':1-3-ResourceManagement').projectDir = new File('practice/fundamentals/3rd/ResourceManagement/app/')
+include ':1-3-ResourceAssignment'
+project(':1-3-ResourceAssignment').projectDir = new File('assignments/fundamentals/3rd/ResourceAssignment')
+
+// fundamentals 4th
+include ':1-4-MessagingAndNotificationPractice'
+project(':1-4-MessagingAndNotificationPractice').projectDir = new File('practice/fundamentals/4th/MessagingAndNotification/app/')
+include ':1-4-MessagingAndNotificationAssignments'
+project(':1-4-MessagingAndNotificationAssignments').projectDir = new File('assignments/fundamentals/4th/MessagingAndNotification/app/')
+
+// fundamentals 5th
+include ':1-5-ActionBarPractice'
+project(':1-5-ActionBarPractice').projectDir = new File('practice/fundamentals/5th/ActionBarPractice')
+include ':1-5-ActionBarAssignment'
+project(':1-5-ActionBarAssignment').projectDir = new File('assignments/fundamentals/5th/ActionBarAssignment')
+
+// fundamentals 6th
+include ':1-6-ListViewPractice'
+project(':1-6-ListViewPractice').projectDir = new File('practice/fundamentals/6th/ListViewPractice')
+include ':1-6-ListViewAssignment'
+project(':1-6-ListViewAssignment').projectDir = new File('assignments/fundamentals/6th/ListViewAssignment')
+
+// fundamentals 7th
+include ':1-7-SerializeAndCollectionPractice'
+project(':1-7-SerializeAndCollectionPractice').projectDir = new File('practice/fundamentals/7th/SerializeAndCollectionPractice')
+include ':1-7-SerializeAndCollectionAssignment'
+project(':1-7-SerializeAndCollectionAssignment').projectDir = new File('assignments/fundamentals/7th/SerializeAndCollectionAssignment')
+
+// fundamentals 8th
+include ':1-8-AsyncPractice'
+project(':1-8-AsyncPractice').projectDir = new File('practice/fundamentals/8th/AsyncPractice')
+include ':1-8-AsyncAssignment'
+project(':1-8-AsyncAssignment').projectDir = new File('assignments/fundamentals/8th/AsyncAssignment')
+
+// fundamentals 9th
+include ':1-9-NetworkPractice'
+project(':1-9-NetworkPractice').projectDir = new File('practice/fundamentals/9th/NetworkPractice')
+include ':1-9-NetworkAssignment'
+project(':1-9-NetworkAssignment').projectDir = new File('assignments/fundamentals/9th/NetworkAssignment')
+
+// fundamentals 10th
+include ':1-10-DatabasePractice'
+project(':1-10-DatabasePractice').projectDir = new File('practice/fundamentals/10th/DatabasePractice')
+include ':1-10-DatabaseAssignment'
+project(':1-10-DatabaseAssignment').projectDir = new File('assignments/fundamentals/10th/DatabaseAssignment')
+
+// fundamentals 11th
+include ':1-11-TestPractice'
+project(':1-11-TestPractice').projectDir = new File('practice/fundamentals/11th/TestPractice')
+include ':1-11-TestAssignment'
+project(':1-11-TestAssignment').projectDir = new File('assignments/fundamentals/11th/TestAssignment')
+
+// advanced 1st
+include ':2-1-DebugPractice'
+project(':2-1-DebugPractice').projectDir = new File('practice/advanced/1st/DebugPractice')
+
+// advanced 3rd
+include ':2-3-DialogPractice'
+project(':2-3-DialogPractice').projectDir = new File('practice/advanced/3rd/DialogPractice/app/')
+include ':2-3-DialogPractice2'
+project(':2-3-DialogPractice2').projectDir = new File('practice/advanced/3rd/DialogPractice2/app/')
+include ':2-3-IncludePractice'
+project(':2-3-IncludePractice').projectDir = new File('practice/advanced/3rd/IncludePractice/app/')
+include ':2-3-PreferencePractice'
+project(':2-3-PreferencePractice').projectDir = new File('practice/advanced/3rd/PreferencePractice/app/')
+include ':2-3-DialogAssignment'
+project(':2-3-DialogAssignment').projectDir = new File('assignments/advanced/3rd/DialogAssignment/app/')
+

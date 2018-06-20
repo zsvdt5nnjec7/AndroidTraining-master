@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/frame"
+    tools:context=".Assignment4Activity">
+    <!-- TODO: 左側から順に、下記の View を配置していき、そのまとまりを画面上部に揃える -->
+
+    <!-- 1. プロフィール画像(ic_launcher)と、それを囲う四角形の枠、その下に プロフィール と書かれた文字 -->
+    <!-- 2. 1. の右側の上半分に、ニックネームの表示と、そのさらに右端に設定アイコン -->
+
+    <FrameLayout
+        android:id="@+id/iconA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/frame1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/frame2"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"/>
+
+        <ImageView
+            android:id="@+id/icon1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="84dp"
+            android:text="プロフィール" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iconB"
+        >
+    <TextView
+        android:id="@+id/name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="115dp"
+        android:layout_alignParentRight="true"
+        android:text="TakutoMiyazaki"
+        android:textColor="#000000"
+        android:textSize="20dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:src="@android:drawable/ic_menu_manage"/>
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="1dp"
+            android:layout_marginLeft="100dp"
+            android:layout_below="@+id/name1"
+            android:background="#000000"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/iconc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iconB"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@+id/iconA"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_call"/>
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_send"/>
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@android:drawable/ic_menu_share"/>
+    </LinearLayout>
+    <!-- 3. 1. の右側の下半分に、電話ボタン、メール送信ボタン、共有ボタンの 3 つを均等割付 -->
+    <!-- 4. 2. と 3. の間に分割線 -->
+    <!-- 条件: 3. 以外では LinearLayout を使ってはならない -->
+    <!-- Hint: 1. 画像の表示には、android:src="@drawable/ic_launcher" 属性を使います -->
+    <!-- Hint: 2. 画像を表示しながら、ボタンとして機能させる特別なボタンの View があります -->
+    <!-- Hint: 3. 区切り線を引く専用の UI はありません。背景色を android:background="#393939" にして、区切り線ぽく扱う工夫が必要です -->
+    <!-- Hint: 4. 均等割付するボタンの画像は、左から android:src="@android:drawable/ic_menu_call", android:src="@android:drawable/ic_menu_send", android:src="@android:drawable/ic_menu_share" です -->
+    <!-- TODO: 上記のまとまりの下に、幅 1 dp の区切り線を引く -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/iconc"
+        android:background="#000000"/>
+    <!-- TODO: 左側から順に、下記の View を配置していき、そのまとまりを画面下部に揃える -->
+    <!-- 1. ic_launcher のアイコンと、その下に メニュー の文字を表示し、アイコンの右肩に 30 と書かれたバッチを表示するボタン -->
+    <!-- 2. 幅 1dp の 縦の区切り線 -->
+    <!-- 3. ic_launcher のアイコンと、その右に つぶやきを投稿 の文字を表示しているボタン -->
+    <!-- 4. 幅 1dp の 縦の区切り線 -->
+    <!-- 5. ic_launcher のアイコンと、その下に 最近 の文字を表示しているボタン -->
+    <!-- 条件: LinearLayout は一切使用しない -->
+    <!-- Hint: 1. ボタンですが Button は使いません -->
+    <!-- Hint: 2. ボタン用の背景は android:background="@drawable/button_state_list" にします -->
+    <!-- Hint: 3. バッチ用の背景は android:background="@drawable/badge" にします -->
+    <!-- Hint: 4. TextView には、文字の隣に drawable を表示する属性があります -->
+
+    <RelativeLayout
+        android:id="@+id/iconw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="500dp">
+    <!-- TODO: 上記の View の上に、お知らせを表示する View を配置する -->
+    <FrameLayout
+
+        android:id="@+id/iconx"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/ic_launcher"
+            android:layout_marginLeft="15dp"
+            />
+        <TextView
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="10dp"
+            android:text="メニュー"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="60dp"
+            android:layout_marginLeft="45dp"
+            android:src="@drawable/badge" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="60dp"
+            android:layout_marginLeft="46dp"
+            android:text="30"/>
+
+    </FrameLayout>
+
+
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/iconx"
+        android:id="@+id/icony">
+
+        <ImageView
+        android:layout_width="1dp"
+        android:layout_height="100dp"
+        android:layout_toRightOf="@+id/iconx"
+        android:layout_marginLeft="10dp"
+            android:layout_gravity="bottom"
+        android:background="#000000"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="50dp"
+            android:layout_gravity="bottom"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="95dp"
+            android:textSize="15dp"
+            android:text="つぶやきを投稿"/>
+    </FrameLayout>
+
+
+
+    <FrameLayout
+
+        android:id="@+id/iconz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_toRightOf="@id/icony">
+
+        <ImageView
+            android:id="@+id/line"
+            android:layout_width="1dp"
+            android:layout_height="100dp"
+            android:layout_gravity="bottom"
+            android:layout_toRightOf="@+id/icony"
+            android:layout_marginLeft="60dp"
+            android:background="#000000"/>
+
+        <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/ic_launcher"
+        android:layout_marginLeft="79dp"
+        />
+    <TextView
+        android:id="@+id/sakin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="87dp"
+        android:layout_marginBottom="10dp"
+        android:text="最近"/>
+    </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/yokoline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="100dp"
+                android:layout_gravity="bottom"
+                android:background="#000000"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:background="@drawable/notify_button_state_list"
+
+                android:layout_gravity="bottom"
+                />
+        </FrameLayout>
+
+    </RelativeLayout>
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:background="@drawable/notify_button_state_list"
+        android:layout_marginTop="440dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="30件のお知らせがあります！"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:layout_marginTop="460dp"
+        android:layout_marginLeft="10dp"/>
+    <!-- Hint: 1. お知らせを表示する View の背景は android:background="@drawable/notify_button_state_list" にします -->
+</RelativeLayout>
+

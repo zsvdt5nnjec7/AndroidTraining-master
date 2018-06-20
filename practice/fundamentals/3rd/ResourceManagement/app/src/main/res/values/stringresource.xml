@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sample1">コカコーラ</string>
+    <string name="sample2">カルピス</string>
+    <string name="sample3">ジンジャーエール</string>
+    <string name="sample4">生茶</string>
+    <string name="sample5">ポカリスエット</string>
+
+</resources>

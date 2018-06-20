@@ -1,0 +1,24 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.2'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+    }
+}
+
+// 全体で共通で使うバージョンをパラメータ化
+ext {
+    androidSdkVersion = 23
+    androidMinSdkVersion = 7
+    supportLibVersion = "23.4.0"
+}
