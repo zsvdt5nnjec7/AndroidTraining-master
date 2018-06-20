@@ -60,7 +60,7 @@ public class MainActivity extends FragmentActivity {
     public boolean onContextItemSelected(MenuItem item) {
         // TODO: 長押しメニューの、削除、の項目の選択をハンドリングして、確認のためのダイアログを
 
- // test 
+ // test 1
                         DialogFragment lsdf = new ListItemSelectionDialogFragment();
                         lsdf.show(getSupportFragmentManager(), "my_dialog_fragment");
 
