@@ -3,9 +3,11 @@ package jp.mixi.practice.database;
 
 import android.content.ContentProvider;
 import android.content.ContentResolver;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 
@@ -55,15 +57,29 @@ public class BookContentProvider extends ContentProvider {
         // TODO ContentUris#withAppendedIdを使用して追加された行のURIを生成してください
         // TODO ContentResolver#notifyChangeメソッドを使って設定したURIのデータに変更があったことを通知してください
         // return するRUIはContentUris#withAppendedIdで生成したURIをreturnしてください
-        return null;
+        SQLiteDatabase db = bookOpenHelper.getWritableDatabase();
+        long rowId = db.insert(Book.BOOK_TABLE_NAME, null, values);
+        // 追加された行のURIを生成。content://jp.mixi.sample.contentprovider.Book/book/1
+        Uri insertedUri = ContentUris.withAppendedId(uri, rowId);
+        // 設定したURIのデータに変更があったことを通知します
+        getContext().getContentResolver().notifyChange(insertedUri, null);
+        return insertedUri;
+
     }
 
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         isValidUri(uri);
 
+        SQLiteDatabase db = bookOpenHelper.getReadableDatabase();
+        // URIからテーブル名を取得
+        String tableName = uri.getPathSegments().get(0);
+        Cursor cursor = db.query(tableName, projection, selection, selectionArgs, null, null, sortOrder);
+        // 設定したURIの変更を監視するように設定
+        cursor.setNotificationUri(getContext().getContentResolver(), uri);
+        return cursor;
         // TODO bookOpenHelperを使用して検索の処理を実装してください
-        return null;
+
     }
 
     @Override
@@ -71,8 +87,14 @@ public class BookContentProvider extends ContentProvider {
         isValidUri(uri);
 
         // TODO bookOpenHelperを使用してupdate処理を実装してください
+        SQLiteDatabase db = bookOpenHelper.getWritableDatabase();
+        // URIからテーブル名を取得
+        String tableName = uri.getPathSegments().get(0);
+        int updatedCount = db.update(tableName, values, selection, selectionArgs);
+        getContext().getContentResolver().notifyChange(uri, null);
+
         // TODO ContentResolver#notifyChangeメソッドを使って設定したURIのデータに変更があったことを通知してください
-        return 0;
+        return updatedCount;
     }
 
     @Override
@@ -80,8 +102,13 @@ public class BookContentProvider extends ContentProvider {
         isValidUri(uri);
 
         // TODO bookOpenHelperを使用してdeleteを実装してください
+
+        SQLiteDatabase db = bookOpenHelper.getWritableDatabase();
+        int deletedCount = db.delete(Book.BOOK_TABLE_NAME, selection, selectionArgs);
+        // 設定したURIのデータに変更があったことを通知します
+        getContext().getContentResolver().notifyChange(uri, null);
+        return deletedCount;
         // TODO ContentResolver#notifyChangeメソッドを使って設定したURIのデータに変更があったことを通知してください
-        return 0;
     }
 
     // このContentProviderで使用可能なURIかを判定します。

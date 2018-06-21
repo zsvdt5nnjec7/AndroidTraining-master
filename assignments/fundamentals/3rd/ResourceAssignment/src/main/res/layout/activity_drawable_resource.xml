@@ -6,12 +6,19 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".DrawableResourceActivity">
+    tools:context=".MainActivity">
 
-    <!-- このボタンに作成したDrawableを適用する -->
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
+
+    <!-- 複数の状態を持つボタン -->
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:text="@string/button_label"
+        android:background="@drawable/select" />
 
 </RelativeLayout>

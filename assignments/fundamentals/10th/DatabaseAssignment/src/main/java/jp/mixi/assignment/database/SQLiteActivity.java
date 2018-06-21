@@ -12,5 +12,7 @@ public class SQLiteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sqlite);
         // TODO:独自SQLiteOpenHelperの作成、それに使用するカラム名などの定義
         // TODO:insert処理、query処理の実装
+        private static final int DATABASE_VERSION = 1;
+
     }
 }

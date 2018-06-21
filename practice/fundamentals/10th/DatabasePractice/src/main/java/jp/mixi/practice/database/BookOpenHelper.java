@@ -4,6 +4,7 @@ package jp.mixi.practice.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class BookOpenHelper extends SQLiteOpenHelper {
 
@@ -35,6 +36,7 @@ public class BookOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // テーブル作成
         db.execSQL(BOOK_TABLE_CREATE);
+        Log.i(TAG,"テーブルbookが作成されました");
     }
 
     @Override

@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 /**
  * TODO: ダイアログで、はい・いいえ の選択肢を表示する
@@ -21,6 +22,7 @@ public class ListItemSelectionDialogFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
 
+
         // AlertDialogはBuilderパターンで生成
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
@@ -28,7 +30,8 @@ public class ListItemSelectionDialogFragment extends DialogFragment {
                 // OKボタン
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-
+                        MainActivity mainActivity = new MainActivity();
+                        mainActivity.deleteItem();
                     }
                 })
                 // Cancelボタン

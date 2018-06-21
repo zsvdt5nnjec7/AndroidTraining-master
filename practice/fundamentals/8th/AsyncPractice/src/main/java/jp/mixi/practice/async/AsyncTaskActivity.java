@@ -71,7 +71,7 @@ public class AsyncTaskActivity extends AppCompatActivity {
                 Log.e(MyAsyncTask.class.getSimpleName(), "thread interrupted: ", e);
             }
             // TODO このコメントアウトを外してdoInBackground上でTextViewの文字を変更した場合の動きを理由を含めてレポートしてください。
-            //  helloWorld.setText("hello!");
+              helloWorld.setText("hello!");
             return null;
         }
 

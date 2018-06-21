@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.sqlite_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Context context = view.getContext();
                 context.startActivity(new Intent(context, SQLiteActivity.class));
             }

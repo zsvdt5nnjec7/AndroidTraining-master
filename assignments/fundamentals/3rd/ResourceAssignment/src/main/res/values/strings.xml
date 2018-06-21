@@ -8,4 +8,5 @@
 
     <string name="string_resource_name">String Resource</string>
     <string name="drawable_resource_name">Drawable Resource</string>
+    <string name="button_label">押すと色が変わるボタン</string>
 </resources>

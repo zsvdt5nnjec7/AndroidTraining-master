@@ -1,9 +1,12 @@
 
 package jp.mixi.practice.database;
 
+import android.net.Uri;
 import android.provider.BaseColumns;
 
 public class Book implements BaseColumns {
+    private static final String AUTHORITY = "jp.mixi.sample.contentprovider.Book";
+    public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/book");
 
     @SuppressWarnings("unused")
     private static final String TAG = Book.class.getSimpleName();
