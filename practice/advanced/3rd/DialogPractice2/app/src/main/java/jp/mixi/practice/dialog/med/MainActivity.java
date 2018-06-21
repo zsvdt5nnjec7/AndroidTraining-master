@@ -37,21 +37,22 @@ public class MainActivity extends FragmentActivity {
         list.setAdapter(adapter);
         listView = list;
 
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+
         listView.setOnLongClickListener(
                 new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View v) {
-                        ;
                         return false;
+                        
                     }
                 }
         );
-
 
         //ロングタップでコンテキストメニューが表示される
         registerForContextMenu(findViewById(R.id.ListView));
