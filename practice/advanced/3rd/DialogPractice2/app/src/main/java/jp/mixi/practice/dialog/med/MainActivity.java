@@ -49,7 +49,7 @@ public class MainActivity extends FragmentActivity {
                     @Override
                     public boolean onLongClick(View v) {
                         return false;
-                        
+
                     }
                 }
         );
