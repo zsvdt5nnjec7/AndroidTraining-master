@@ -1,12 +1,18 @@
 
 package jp.mixi.assignment.dialog;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.app.Dialog;
+import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.EditText;
 
 public class MainActivity extends FragmentActivity {
 
@@ -26,6 +32,8 @@ public class MainActivity extends FragmentActivity {
 
     private void showAssignmentDialog() {
         // TODO:ダイアログを表示する処理を実装してください
+        DialogFragment adf = new AssignmentDialogFragment();
+        adf.show(getSupportFragmentManager(), "my_dialog_fragment");
     }
 
     @Override
@@ -38,6 +46,32 @@ public class MainActivity extends FragmentActivity {
     // TODO:独自DialogFragmentを実装してください
     // TODO:コンテンツ領域にはEditTextを配置した独自レイアウトを使用してください。また、そのためのレイアウトxmlを作成してください。
     public static class AssignmentDialogFragment extends DialogFragment {
+        LayoutInflater inflater
+                = LayoutInflater.from(this);
+        View view = inflater.inflate(R.layout.dilog_assi, null);
+        final EditText editView = new (EditText)view.viewfind;
+        @NonNull
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setMessage("名前を入力してください");
+            builder.setView(editView);
+            builder.setPositiveButton("OK",new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
 
+                }
+
+            });
+            builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            });
+            builder.show();
+            return super.onCreateDialog(savedInstanceState);
+
+        }
     }
 }

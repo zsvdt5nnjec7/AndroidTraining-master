@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:key="pref_key_storage_settings"
+        android:title="新規のお知らせ" >
+        <CheckBoxPreference
+            android:key="category1_checkbox1_key"
+            android:title="新規お知らせの設定"
+            android:summary="新着お知らせの受信に関する設定を行います。"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="pref_key_storage_settings"
+        android:title="連絡先" >
+        <CheckBoxPreference
+            android:key="category2_checkbox1_key"
+            android:title="連絡先の同期設定"
+            android:summary="友人の情報を連絡先と同期絵できます"/>
+        <ListPreference
+            android:key="category2_list1_key"
+            android:title="自動同期の間隔"
+            android:dependency="category2_checkbox1_key"
+            android:entries="@array/entries_list_preference"
+            android:entryValues="@array/entryvalues_list_preference"
+            android:summary="%s"
+            android:dialogTitle ="自動同期の間隔"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
